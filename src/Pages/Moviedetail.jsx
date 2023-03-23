@@ -54,13 +54,13 @@ const MoviePage = () => {
                 {
                     movies.map((m) => (
                        <>
-                        <div className="col-md-3 moviepage" key={m._id}>
-                            <img style={{width:"90%", height:'100%'}} src={m.img} alt={m.title} />
+                        <div className="col-md-3 mx-auto my-2 moviepage col-6" key={m._id}>
+                            <img style={{width:"100%"}}  src={m.img} alt={m.title} />
                         </div>
                         <div className="col-md-8">
                         
                             <div className="row d-flex justify-content-between align-items-center">
-                                <h1 className="col-7">{m.title}</h1>
+                                <h1 className="col-7 my-2">{m.title}</h1>
                                 <div className="col-5 text-end">Year : 2021 &nbsp; <BsBookmarkHeartFill onClick={() => wish(m)
 
                             } style={{fontSize:"35px", alignSelf:'end', cursor:"pointer"}}/></div>
@@ -72,7 +72,7 @@ const MoviePage = () => {
 
                             {
                                 auth?.user ? 
-                                (<button  className=" btn fw-bold col-md-3 align-items-end" style={{background:'#f84464', color:'white'}}> <NavLink to='/watch' style={{color:"white"}}>Watch Now</NavLink> <FaPlayCircle/></button>) 
+                                (<button  className=" mx-auto my-2 btn fw-bold col-md-3 align-items-end" style={{background:'#f84464', color:'white', width:"50%"}}> <NavLink to='/watch' style={{color:"white"}}>Watch Now</NavLink> <FaPlayCircle/></button>) 
                                 : 
                                 (<button  className=" btn fw-bold col-md-3 align-items-end" style={{background:'#f84464', color:'white'}}> <NavLink to='/login' style={{color:"white"}}>Login To Watch</NavLink> <FaPlayCircle/></button>)
                             }

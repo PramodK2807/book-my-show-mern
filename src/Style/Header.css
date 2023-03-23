@@ -12,7 +12,7 @@ li{
 }
 .nav-container{
   width: 100%;
-  height: 90px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,6 +43,8 @@ nav ul li a{
 a{
   text-decoration: none;
 }
+
+
 nav ul li a:hover{
   color: #ff0336;
 }
@@ -78,48 +80,61 @@ nav ul li a:hover{
 
 @media screen and (max-width:860px ) {
   .nav-links{
-    display: none;
+    display: block;
+    position: fixed;
+    right: 0 !important;
+    top: -100% !important;
+    height: 100%;
+    
   }
   .menu-icon{
     z-index: 50;
     display: block !important;
   }
   .mobile .ul{
-    z-index: 245845;
     background-color: rgb(255, 255, 255);
     display: flex;
-    width: 100%;
+    width: 250px;
+    right: 0;
+    top: 60px;
     height: 100vh;
     position: absolute;
     flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) !important;
-    padding-top: 100px;
+    padding-top: 50px !important;
     
   }
 
   .fa-xmark{
     z-index: 55555555555555;
-    color: #ff0336 !important;
+    color: #ffffff !important;
+    
+  }
+  .mobile .ul li{
+    padding: 5px 1rem;
+    margin: 0;
+    width: 100%;
+    padding: 10px 25px;
   }
 
+  .mobile ul li a:hover{
+    color: white !important;
+  }
   .mobile ul li a{
     color: black !important;
     letter-spacing: 1px;
-    line-height: 2;
-    font-weight: bold;
+    /* line-height: 2; */
+    
   }
 
   .mobile ul li:hover{
     background-color: #ff0336;
-    width:100%;
-    text-align: center;
-    transition: all 0.7s;
-    
-  }
-  .mobile ul li a:hover{
-    color: white !important ;
+    transition: all 0.5s;
+    color: white !important;
   }
 }
 
+@media screen and (max-width: 380px) {
+  .mobile .ul{
+    width: 100%;
+  }
+}

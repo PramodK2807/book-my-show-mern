@@ -92,9 +92,9 @@ const Header = () => {
                     </span>
                   </NavLink>
                 </li>
-                <li className="nav-item dropdown">
+                <li className=" dropdown">
                   <NavLink
-                    className="nav-link dropdown-toggle"
+                    className=" dropdown-toggle"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
@@ -139,7 +139,7 @@ const Header = () => {
                           onClick={(e) => logout(e)}
                           className="bg-light dropdown-item  text-dark"
                         >
-                          Logout <FiLogOut />
+                          <FiLogOut style={{marginRight:"10px"}} /> Logout 
                         </NavLink>
                       </li>
                     </>
@@ -151,7 +151,7 @@ const Header = () => {
                     <>
                     <li>
                     <NavLink to="/login" className="bg-light dropdown-item  text-dark">
-                        Login
+                    <FiLogOut style={{marginRight:"10px"}} />  Login
                       </NavLink>
                     </li>
                       

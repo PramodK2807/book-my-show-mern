@@ -62,6 +62,14 @@ nav ul li a:hover{
   color: #ff0336;
 }
 
+@media screen and (max-width:540px) {
+  .navlogo img{
+    width: 100px !important;
+    margin-right: 8px !important;
+    transition: all 0.5s;
+  }
+}
+
 @media screen and (max-width:860px ) {
   .nav-links{
     display: none;
@@ -108,3 +116,4 @@ nav ul li a:hover{
     color: white !important ;
   }
 }
+

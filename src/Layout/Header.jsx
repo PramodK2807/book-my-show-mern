@@ -45,7 +45,7 @@ const Header = () => {
     toast.success("Logged out successfully");
   };
   return (
-    <div style={{ background: "rgb(51 53 69)", minHeight: "60px" }}>
+    <div className="navb" style={{ background: "rgb(51 53 69)", minHeight: "60px" }}>
       <nav>
         <div className="container-fluid">
           <div className="nav-container">

@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(to bottom right, #8a88e5, #f16694) !important;
+}
+
+nav a{
+  color: white !important;
+  text-decoration: none !important;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.seeall p{
+  color: white !important;
+  font-size: 15px !important;
+  margin: 3px 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .common-img{
+    max-height: 220px;
+  }
+  .seeall img{
+    height: 220px;
+  }
+  .seeall p{
+    color: white !important;
+    font-size: 15px !important;
+    margin: 3px 0 !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  
+  .seeall img{
+    padding: 0 10px !important;
+    border-radius: 8px !important;
+  }
+}
+
+@media  screen and (min-width:992px){
+  .seeall img{
+    height: 300px !important;
+    border-radius: 5px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .seeall img{
+    max-height: 220px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar form{
+    width: 100px !important;
+  }
+}
+
+
+
+.noResult{
+  position: absolute;
+  top: 50%;
+  left: 50% !important;
+  text-align: center;
+  transform: translate(-50%, -50%) !important;
+}
+
+
+img{
+  border-radius: 5px !important;
+}
+
+
+
+video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
+select{
+  border-radius: 5px !important;
+  outline: none;
+  border: none;
+}
+
+select option{
+  
+  padding: 5px 0 5px 5px !important;
+}
+
+
+@media screen and (max-width: 458px) {
+  .allmove {
+    font-size: 19px !important;
+  }
+}

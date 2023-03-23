@@ -1,0 +1,153 @@
+<nav className="navbar navbar-expand-lg navbar-light bg-dark">
+        <div className="container">
+          <NavLink className="navbar-brand" to='/'>
+          <img
+                src="https://in.bmscdn.com/webin/common/icons/logo.svg"
+                alt="logo"
+              />
+          </NavLink>
+
+          <form style={{position:"relative"}} className="d-flex" onSubmit={searchHandle}>
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                value={search.keyword}
+                onChange={(e) => setSearch({...search, keyword: e.target.value})}
+              />
+              {/* <button className="btn" style={{position:'absolute', right:'0' ,background:'#f84464', color:"white"}} type="submit" >
+                Search
+              </button> */}
+            </form>
+          <button
+          style={{boxShadow:"none", background:'white'}}
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon text-white" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            
+              <li className="nav-item">
+                <NavLink className="nav-link" aria-current="page" to='/'>
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+             
+              <NavLink className="nav-link" to='/wishlist'>
+                  WishList <span style={{background:'red', padding:"0 7px", border:"solid 1px white", borderRadius:"50%"}}>{wishlist.length}</span>
+                </NavLink>
+             
+                
+              </li>
+  
+              <li className="nav-item dropdown">
+                <NavLink
+                  className="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Genere
+                </NavLink>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {
+                    categories.map((cat) => (
+                      <li key={cat._id}>
+                      <NavLink className="dropdown-item text-dark" to={`/categories/${cat._id}`}>
+                        {cat.name}
+                      </NavLink>
+                    </li>
+                    ))
+                  }
+                 
+                </ul>
+              </li>
+
+
+              
+                  {
+                    auth.user ? (
+                    <>
+                    <li className="nav-item dropdown">
+                <NavLink
+                  className="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {auth?.user?.name}
+                </NavLink>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                   {/* <li >
+                      <NavLink className="dropdown-item text-dark"   to={`/watched/${auth?.user?.isAdmin === true ? `admin/${auth.user._id}` : 'user'}`}>
+                        Watched Movie
+                      </NavLink>
+                    </li> */}
+
+                    <li>
+                <NavLink to='/' onClick={(e) => logout(e)} className="bg-light dropdown-item  text-dark">Logout <FiLogOut/>
+                </NavLink>
+                </li>
+
+                </ul>
+                </li>
+                    
+                    </>
+                    
+                    ) : (
+                      <li className="nav-item">
+                    <NavLink className="btn" style={{background:'#f84464', color:"white"}} to='/login'>
+                      Login
+                    </NavLink>
+                  </li>
+                    )
+
+                  }
+                  {/* </ul> */}
+              {/* </li> */}
+
+
+
+
+                        {/* <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              {
+                        
+                        auth.user ? (<>
+                  <li>
+                  <NavLink className="btn dropdown-item text-dark" style={{background:'#f84464', color:"white"}} to={`/dashboard/${auth?.user?.isAdmin === true ? `admin/${auth.user._id}` : 'user'}`}>
+                      Dashboard
+                  </NavLink>
+                </li>
+
+                <li>
+                <NavLink onClick={(e) => logout(e)} className="dropdown-item text-dark">Logout <FiLogOut/></NavLink>
+                </li>
+                  </>)
+                : 
+
+                  (<>
+                    <li className="nav-item">
+                    <NavLink className="btn" style={{background:'#f84464', color:"white"}} to='/login'>
+                      Login
+                    </NavLink>
+                  </li>
+                   </>
+  ) 
+
+}
+</ul> */}
+              
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
